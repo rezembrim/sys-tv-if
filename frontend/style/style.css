@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.left {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+header {
+    background-color: rgba(128, 128, 128, 0.769);
+}
+
+.logo>img {
+    width: 15%;
+}
+
+.portarias {
+    margin: 20px 10px;
+    border: 2px solid #c4c4c4c4;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 500px;
+}
+
+.agenda {
+    margin: 20px 10px;
+    border: 2px solid #c4c4c4c4;
+    width: 30%;
+}
+
+.agenda>iframe {
+    width: 150%;
+    height: 50%;
+}
+
+.noticias {
+    margin: 20px 10px;
+    border: 2px solid #c4c4c4c4;
+    width: 70%;
+}
