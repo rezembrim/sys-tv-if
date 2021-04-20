@@ -14,6 +14,7 @@ function formataData() {
 setInterval(formataHoraMinuto, 1000);
 
 function formataHoraMinuto() {
+
     data = new Date();
     var hora = data.getHours();
     var minuto = data.getMinutes();

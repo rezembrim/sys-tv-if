@@ -1,3 +1,5 @@
+<?php include('../backend/WebScraping.php') ?>
+
 <html>
 
 <head>
@@ -30,26 +32,21 @@
                     <h3>Clipping</h3>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo">Notícia mais recente</p>
-                        <p>fjsuidhfsidjahfisuddsjsfaa</p>
+                        <p class="titulo"><?php echo $matches[2][0]; ?></p>
                     </article>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo">Notícia recente</p>
-                        <p>fjsuidhfsidjahfisuddsjsfaa</p>
+                        <p class="titulo"><?php echo $matches[2][1]; ?></p>
                     </article>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo">Notícia menos recente</p>
-                        <p>fjsuidhfsidjahfisuddsjsfaa</p>
+                        <p class="titulo"><?php echo $matches[2][2]; ?></p>
                     </article>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo">Notícia menos recente ainda</p>
-                        <p>fjsuidhfsidjahfisuddsjsfaa</p>
+                        <p class="titulo"><?php echo $matches[2][3]; ?></p>
                     </article>
                 </section>
-                <!--vou usar o web scraping para pegar as notícias-->
                 <div class="data-e-hora w50">
                     <div class="data-e-hora-internos">
                         <img src="images/Campus Joao Camara-Vertical.png" alt="logo vertical do ifrn-jc">
@@ -57,9 +54,8 @@
                         <h3 id="clock"></h3>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--center-->
+            </div><!--noticias-dataHora-->
+        </div><!--center-->
     </main>
 
     <footer>
