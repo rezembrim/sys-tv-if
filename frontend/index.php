@@ -32,19 +32,19 @@
                     <h3>Clipping</h3>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo"><?php echo $matches[2][0]; ?></p>
+                        <a href="<?php echo $link[2][0];?>" id="titulo1" class="titulo"><?php echo $matches[2][0]; ?></a>
                     </article>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo"><?php echo $matches[2][1]; ?></p>
+                        <a href="<?php echo $link[2][1];?>" class="titulo"><?php echo $matches[2][1]; ?></a>
                     </article>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo"><?php echo $matches[2][2]; ?></p>
+                        <a href="<?php echo $link[2][2];?>" class="titulo"><?php echo $matches[2][2]; ?></a>
                     </article>
                     <article>
                         <div class="retangulo"></div>
-                        <p class="titulo"><?php echo $matches[2][3]; ?></p>
+                        <a href="<?php echo $link[2][3];?>" class="titulo"><?php echo $matches[2][3]; ?></a>
                     </article>
                 </section>
                 <div class="data-e-hora w50">
@@ -53,7 +53,7 @@
                         <h2 id="date"></h2>
                         <h3 id="clock"></h3>
                     </div>
-                </div>
+                </div><!--data-e-hora-->
             </div><!--noticias-dataHora-->
         </div><!--center-->
     </main>

@@ -14,7 +14,6 @@ function formataData() {
 setInterval(formataHoraMinuto, 1000);
 
 function formataHoraMinuto() {
-
     data = new Date();
     var hora = data.getHours();
     var minuto = data.getMinutes();
@@ -24,7 +23,7 @@ function formataHoraMinuto() {
     minuto = ('0' + minuto).slice(-2);
     segundo = ('0' + segundo).slice(-2);
 
-    console.log(document.getElementById('clock').innerHTML = hora + ':' + minuto + ':' + segundo);
-    formataData()
+    document.getElementById('clock').innerHTML = hora + ':' + minuto + ':' + segundo;
+    formataData();
 
 }

@@ -28,7 +28,7 @@ header {
 }
 
 .logo>img {
-    width: 15%;
+    width: 12%;
 }
 
 section.portarias {
@@ -56,8 +56,15 @@ section.agenda {
     color: #616161c4;
 }
 
+.noticias-dataHora {
+    display: grid;
+    grid-gap: 10px 2%;
+    grid-template-columns: 1fr 1fr;
+}
+
 section.noticias {
-    margin: 20px 10px;
+    margin: 0px 10px;
+    margin-top: 20px;
     border: 2px solid #c4c4c4c4;
     height: 100%;
     max-width: 1000px;
@@ -70,18 +77,24 @@ section.noticias {
 
 .noticias>article {
     margin: 10px;
+    display: grid;
+    grid-gap: 10px 2%;
+    grid-template-columns: 1fr 15fr;
+    background-color: rgba(63, 247, 207, 0.089);
+    border-radius: 5px;
 }
 
 .noticias>article>.retangulo {
-    width: 100%;
-    max-width: 20px;
-    background-color: rgb(0, 255, 34);
+    height: 100%px;
+    width: 4px;
+    border: 2px solid #00b9b0;
 }
 
-.noticias-dataHora {
-    display: grid;
-    grid-gap: 10px 2%;
-    grid-template-columns: 1fr 1fr;
+.noticias>article>a {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .data-e-hora {
