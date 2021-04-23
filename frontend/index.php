@@ -1,6 +1,6 @@
 <?php include('../backend/WebScraping.php') ?>
 
-<html>
+<html language="en">
 
 <head>
     <title>Schedule System</title>
@@ -23,15 +23,14 @@
             <!--ainda vou ver como isso funfa-->
             <section class="agenda">
                 <h3>Agenda do diretor</h3>
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FFortaleza&amp;src=Yml4b3BpcnVsZXRhNjJAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=cHQuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%2333B679&amp;color=%230B8043&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0"
-                    style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FFortaleza&amp;src=Yml4b3BpcnVsZXRhNjJAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=cHQuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%2333B679&amp;color=%230B8043&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style="border-width:0" width="800" height="700" frameborder="0" scrolling="no"></iframe>
             </section>
             <!--ainda vou ter o iframe da agenda do diretor-->
             <div class="noticias-dataHora">
                 <section class="noticias">
                     <h3>Clipping</h3>
-                    <article>
-                        <div class="retangulo"></div>
+                    <article id="noticia-mais-recente">
+                        <div id="retangulo-noticia-recente" class="retangulo"></div>
                         <a href="<?php echo $link[2][0];?>" id="titulo1" class="titulo"><?php echo $matches[2][0]; ?></a>
                     </article>
                     <article>

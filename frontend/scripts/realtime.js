@@ -25,5 +25,4 @@ function formataHoraMinuto() {
 
     document.getElementById('clock').innerHTML = hora + ':' + minuto + ':' + segundo;
     formataData();
-
 }
