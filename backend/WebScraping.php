@@ -1,19 +1,20 @@
 <?php
 
-    $content = file_get_contents('https://portal.ifrn.edu.br/campus/joaocamara');
+    $url = 'https://portal.ifrn.edu.br/campus/joaocamara';
+    $content = file_get_contents($url);
 
     preg_match_all('/<div class="each_news">(.*?)<span class="news_title">(.*?)<\/span>(.*?)<\/div>/s', $content, $matches);
 
-    for ($i=0; $i < 4; $i++) { 
-        $matches[2][$i] = formataTitulo( $matches[2][$i]);
+    for ($i=0, $numberNews = 4; $i < $numberNews; $i++) { 
+        $matches[2][$i] = formatTitle($matches[2][$i]);
     }
    
-    function formataTitulo($var)
-    {
-        if (strlen($var) > 100) {
-            $var = substr($var, 0, 100).'...';
+    function formatTitle($title) {
+        $maxChar = 100;
+        if (strlen($title) > $maxChar) {
+            $title = substr($title, 0, $maxChar).'...';
         }
-        return $var;
+        return $title;
     }
 
     preg_match_all('/<div class="each_news">(.*?)<a href="(.*?)">(.*?)<\/a>(.*?)<\/div>/s', $content, $link);
