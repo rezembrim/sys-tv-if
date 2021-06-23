@@ -9,14 +9,11 @@
         $matches[2][$i] = formatTitle($matches[2][$i]);
     }
    
+    preg_match_all('/<div class="each_news">(.*?)<a href="(.*?)">(.*?)<\/a>(.*?)<\/div>/s', $content, $link);
+
     function formatTitle($title) {
         $maxChar = 100;
-        if (strlen($title) > $maxChar) {
-            $title = substr($title, 0, $maxChar).'...';
-        }
-        return $title;
+        return strlen($title) > $maxChar?$title = substr($title, 0, $maxChar).'...':$title;
     }
-
-    preg_match_all('/<div class="each_news">(.*?)<a href="(.*?)">(.*?)<\/a>(.*?)<\/div>/s', $content, $link);
 
 ?>
