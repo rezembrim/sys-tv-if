@@ -2,13 +2,10 @@
             <section class="portarias w100">
                 
                 <?php
-                    $token =    "<script>
-                                    var token = window.location.hash;
-                                    document.write(token);
-                                </script>";
-                    $n = array('#');
-                    $a = str_replace($n,"?",$token);
-                    echo $a;
+                    // echo $_COOKIE['PHPSESSID'];
+                    $url = "https://suap.ifrn.edu.br";
+                    $content = file_get_contents($url);
+                    echo $content;
                 ?>
             </section>
             <!--ainda vou ver como isso funfa-->

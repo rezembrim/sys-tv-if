@@ -1,7 +1,5 @@
 <?php
-    include('../backend/WebScraping.php');   
-    require '../vendor/autoload.php'; 
-    session_start();
+    include('../backend/WebScraping.php');
 ?>
 
 <!DOCTYPE lang="en">
