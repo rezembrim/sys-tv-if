@@ -36,7 +36,6 @@
         ?>
     </main>
     
-    
     <footer>
         <p>Página desenvolvida pela CTI/JC</p>
     </footer>

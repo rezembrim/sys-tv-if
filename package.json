@@ -1,0 +1,12 @@
+{
+    "name": "ws-projeto-TI",
+    "version": "1.0.0",
+    "main": "../backend/bot.js",
+    "repository": "https://github.com/rezembrim/sys-tv-if.git",
+    "author": "Lucas <lucas.jdev1@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "puppeteer": "^10.0.0",
+        "puppeteer-core": "^10.0.0"
+    }
+}

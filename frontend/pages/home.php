@@ -1,12 +1,7 @@
 <div class="center">
             <section class="portarias w100">
+                <!-- <script src="../frontend/js/bot.js"></script> -->
                 
-                <?php
-                    // echo $_COOKIE['PHPSESSID'];
-                    $url = "https://suap.ifrn.edu.br";
-                    $content = file_get_contents($url);
-                    echo $content;
-                ?>
             </section>
             <!--ainda vou ver como isso funfa-->
             <section class="agenda">
