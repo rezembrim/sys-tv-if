@@ -2,7 +2,9 @@
     include('../backend/WebScraping.php');
 ?>
 
-<!DOCTYPE lang="en">
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +42,21 @@
         <p>Página desenvolvida pela CTI/JC</p>
     </footer>
 
+    <script>
+        (async() => {
+            //abrir arquivos de dados (json)
+            const response = await fetch('http://localhost/ws-projeto-ti/suap.json');
+            const data = await response.json();
 
+            //formatar os dados para enviar para o html
+            const htmlList = data
+            .map(iconView => `<li><a href="${iconView.href}">${iconView.title}</a></li>`)
+            .join('');
+
+            //colocar no html
+            document.querySelector('.portarias').innerHTML = htmlList;
+        })();
+    </script>
 </body>
 
 </html>
