@@ -1,8 +1,5 @@
 <div class="center">
-            <section class="portarias w100">
-                <!-- <script src="../frontend/js/bot.js"></script> -->
-                
-            </section>
+            <section class="portarias w100"></section>
             <!--ainda vou ver como isso funfa-->
             <section class="agenda">
                 <h3>Agenda do diretor</h3>

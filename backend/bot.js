@@ -9,7 +9,13 @@
 const puppeteer = require('puppeteer');
 const fileSystem = require('fs');
 
-(async() => {
+const cors = require('cors');
+const express = require('express');
+const server = express();
+
+server.use(cors());
+
+server.get('/', async(request, response) => {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
 
@@ -31,17 +37,47 @@ const fileSystem = require('fs');
         const nodeList = document.querySelectorAll('.icon-view');
         const iconViewArray = [...nodeList];
 
-        // retorna um json com os campos de link e titulo
-        return iconViewArray.map(iconView => ({
-            href: iconView.href,
-            title: iconView.title
-        }));
+        // retorna uma lista com os campos de link e titulo
+        return iconViewArray.map(({ href }) => ({ href }));
     });
 
+
+    //pegar os src dos iframes
+    //to com problemas nesse etapa
+    let srcList;
+    for (let iconView of iconViewList) {
+        await page.goto(iconView.href);
+        const srcIframe = await page.evaluate(() => {
+            const nodeList = document.querySelectorAll('iframe');
+            const iframeArray = [...nodeList];
+
+            return iframeArray.map(({ src }) => ({ src }))
+        });
+
+        console.log(srcIframe.src);
+
+        await page.goBack();
+    }
+
+    //cria um arquivo json partindo-se de uma lista de objetos
     fileSystem.writeFile('suap.json', JSON.stringify(iconViewList, null, 2), err => {
         if (err) throw new Error('something ment wrong');
         console.log('well done!');
     });
 
     await browser.close();
-})();
+    response.send(JSON.stringify(iframe, null, 2));
+});
+
+const port = 3122
+server.listen(port, () => {
+    console.log(`
+        Servidor subiu com sucessinhos
+        acesse em http://localhost:${port}
+    `);
+})
+
+// ;
+// (async() => {
+
+// })();

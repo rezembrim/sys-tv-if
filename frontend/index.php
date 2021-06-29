@@ -44,17 +44,22 @@
 
     <script>
         (async() => {
-            //abrir arquivos de dados (json)
-            const response = await fetch('http://localhost/ws-projeto-ti/suap.json');
-            const data = await response.json();
+            try {
+                //abrir arquivos de dados (json)
+                const response = await fetch('http://localhost:3122/');
+                const data = await response.json();
 
-            //formatar os dados para enviar para o html
-            const htmlList = data
-            .map(iconView => `<li><a href="${iconView.href}">${iconView.title}</a></li>`)
-            .join('');
+                //formatar os dados para enviar para o html
+                const htmlList = data
+                .map(iconView => `<li><a href="${iconView.href}">${iconView.title}</a></li>`)
+                .join('');
 
-            //colocar no html
-            document.querySelector('.portarias').innerHTML = htmlList;
+                //colocar no html
+                document.querySelector('.portarias').innerHTML = htmlList;
+            } catch (error) {
+                console.log('ERROOOU');
+            }
+            
         })();
     </script>
 </body>
