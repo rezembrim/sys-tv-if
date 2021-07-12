@@ -9,11 +9,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Schedule System</title>
-    <script src="scripts/realtime.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <script src="../frontend/js/conectorWithSuapJson.js"></script>
 </head>
 
 <body>
@@ -37,31 +36,12 @@
             }
         ?>
     </main>
-    
+
     <footer>
         <p>Página desenvolvida pela CTI/JC</p>
     </footer>
 
-    <script>
-        (async() => {
-            try {
-                //abrir arquivos de dados (json)
-                const response = await fetch('http://localhost:3122/');
-                const data = await response.json();
-
-                //formatar os dados para enviar para o html
-                const htmlList = data
-                .map(iconView => `<li><a href="${iconView.href}">${iconView.title}</a></li>`)
-                .join('');
-
-                //colocar no html
-                document.querySelector('.portarias').innerHTML = htmlList;
-            } catch (error) {
-                console.log('ERROOOU');
-            }
-            
-        })();
-    </script>
+    <script src="../frontend/js/index.js"></script>
 </body>
 
 </html>

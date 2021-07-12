@@ -46,6 +46,10 @@ section.portarias {
     max-height: 1000px;
 }
 
+.bodyContentSuap {
+    display: none;
+}
+
 section.agenda {
     margin: 20px 10px;
     border: 2px solid #c4c4c4c4;
