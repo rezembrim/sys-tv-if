@@ -3,9 +3,10 @@
  * Devido o desenvolvedor não saber como fazer isso via php,
  * houve uma opção de fazer isso via simulação de usuário
  * via puppeteer (o qual é o bot responsável por isso)
- * @Autor Lucas Mateus (estagiário)
+ * 
+ * @Autor Lucas-dev-back
  */
-require('dotenv').config()
+require('dotenv').config();
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
@@ -16,7 +17,7 @@ const server = express();
 server.use(cors());
 
 server.get('/', async(request, response) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
 
     //etapa de login
@@ -26,6 +27,7 @@ server.get('/', async(request, response) => {
     await page.type('[name="password"]', process.env.PASSWORD);
     await page.waitForTimeout(3542);
     await page.click('[class="btn success"]');
+    await page.waitForNavigation();
 
     //etapa de ir na página de documentos
     await page.goto('https://suap.ifrn.edu.br/admin/documento_eletronico/documentotexto/?nivel_acesso__exact=3&o=-8&setor_donouo=9&status__exact=7&tipo=3');
@@ -42,8 +44,6 @@ server.get('/', async(request, response) => {
 
 
     //pegar os src dos iframes
-    let indexForArray = 0;
-    let content = new Array(6);
     const maxInfo = 6;
 
     for (let i = 0; i < maxInfo; i++) {
@@ -58,28 +58,29 @@ server.get('/', async(request, response) => {
          * de cada objeto e armazenar
          * em um array
          */
-        for (const obj of srcIframe) {
-            await page.goto(obj.src);
-            const bodyContent = await page.evaluate(() => {
-                const nodeList = document.querySelectorAll('main #suap-ckeditor');
-                const bodyContentArray = [...nodeList];
-                return bodyContentArray.map(({ innerHTML }) => ({ innerHTML }));
+
+        let maxSrc = srcIframe.length;
+        for (let index = 0; index < maxSrc; index++) {
+            await page.goto(srcIframe[index].src);
+            const htmlContent = await page.evaluate(() => {
+                const nodeList = document.querySelectorAll('html');
+                const htmlArray = [...nodeList];
+                return htmlArray[0].innerHTML;
             });
 
-            content[indexForArray] = bodyContent;
-            indexForArray++;
+            fs.writeFile(
+                '../ws-projeto-TI/backend/downloads/file' + i + '.html',
+                '<html>' + htmlContent + '</html>',
+                err => {
+                    if (err) throw new Error('something ment wrong');
+                    console.log('saved');
+                }
+            );
 
         }
-    }
 
-    /** etapa de escrever o
-     * json baseado no array
-     * da etapa passada
-     */
-    fs.writeFile('suap.json', JSON.stringify(content, null, 2), err => {
-        if (err) throw new Error('something ment wrong');
-        console.log('well done!');
-    });
+
+    }
 
     await browser.close();
     response.send("processado com sucesso!")

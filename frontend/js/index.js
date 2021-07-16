@@ -1,22 +1,33 @@
-var delay = 10;
-var time = delay * 1000,
-    currentBodySuapIndex = 0;
-var bodyContents = document
-    .querySelectorAll('.portarias div'),
-    max = bodyContents.length;
+/**
+ * Esse script serve para
+ * transitar de uma div para
+ * outra.
+ * 
+ * @OBS : bodyContent serve como
+ *        gambiarra pra o negócio
+ *        funcionar.
+ * 
+ * @Autor Lucas-dev-back
+ */
 
-(function teste() {
-    console.log(bodyContents);
-})()
+const delay = 10;
+var time = delay * 1000,
+    currentBodySuapIndex = 0,
+    bodyContent = document.querySelectorAll('.bodyContentSuap'),
+    max = document
+    .querySelectorAll('.bodyContentSuap')
+    .length;
 
 function nextBodyContent() {
-    bodyContents[currentBodySuapIndex].style.display = 'none';
+    bodyContent[currentBodySuapIndex]
+        .style.display = 'none';
     currentBodySuapIndex++;
 
     if (currentBodySuapIndex >= max)
         currentBodySuapIndex = 0;
 
-    bodyContents[currentBodySuapIndex].style.display = 'block';
+    bodyContent[currentBodySuapIndex]
+        .style.display = 'block';
 }
 
 function start() {
@@ -25,4 +36,12 @@ function start() {
     }, time);
 }
 
+function initDisplayNoneInBodyContents() {
+    for (let index = 1; index < max; index++) {
+        bodyContent[index].style.display = 'none'
+    }
+}
+
+initDisplayNoneInBodyContents();
+bodyContent[0].style.display = 'block'
 window.addEventListener('load', start);
