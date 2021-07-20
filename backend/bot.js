@@ -17,7 +17,7 @@ const server = express();
 server.use(cors());
 
 server.get('/', async(request, response) => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     //etapa de login
@@ -27,7 +27,7 @@ server.get('/', async(request, response) => {
     await page.type('[name="password"]', process.env.PASSWORD);
     await page.waitForTimeout(3542);
     await page.click('[class="btn success"]');
-    await page.waitForNavigation();
+    // await page.waitForNavigation();
 
     //etapa de ir na página de documentos
     await page.goto('https://suap.ifrn.edu.br/admin/documento_eletronico/documentotexto/?nivel_acesso__exact=3&o=-8&setor_donouo=9&status__exact=7&tipo=3');
@@ -58,8 +58,8 @@ server.get('/', async(request, response) => {
          * de cada objeto e armazenar
          * em um array
          */
-
         let maxSrc = srcIframe.length;
+
         for (let index = 0; index < maxSrc; index++) {
             await page.goto(srcIframe[index].src);
             const htmlContent = await page.evaluate(() => {
@@ -69,7 +69,7 @@ server.get('/', async(request, response) => {
             });
 
             fs.writeFile(
-                '../ws-projeto-TI/backend/downloads/file' + i + '.html',
+                '../ws-projeto-TI/frontend/pages/downloads/file' + index + '.html',
                 '<html>' + htmlContent + '</html>',
                 err => {
                     if (err) throw new Error('something ment wrong');

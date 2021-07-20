@@ -37,19 +37,20 @@ header {
     margin: 2px 15px;
 }
 
+
+/* =================portarias==================== */
+
 section.portarias {
     margin: 20px 10px;
     border: 2px solid #c4c4c4c4;
     border-radius: 20px;
     max-width: 700px;
-    height: 99%;
+    height: 100%;
     max-height: 1000px;
 }
 
-.bodyContentSuap p {
-    font-size: 10px;
-    margin: 10px;
-}
+
+/* ============================================== */
 
 section.agenda {
     margin: 20px 10px;
@@ -75,6 +76,9 @@ section.agenda {
     grid-gap: 10px 2%;
     grid-template-columns: 1fr 1fr;
 }
+
+
+/* ============================================== */
 
 section.noticias {
     margin: 0px 10px;
@@ -166,6 +170,9 @@ h3 {
     color: #003833;
 }
 
+
+/* ============================================== */
+
 footer {
     bottom: 0;
     width: 100%;
@@ -176,15 +183,4 @@ footer {
 
 footer>p {
     text-align: center;
-}
-
-@media screen and (min-width: 1524px) {
-    .center {
-        grid-gap: -10px 0;
-        grid-template-columns: 1fr 1fr;
-    }
-    .portarias {
-        width: 100%;
-        max-width: 100px;
-    }
 }

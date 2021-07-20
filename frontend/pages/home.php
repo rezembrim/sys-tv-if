@@ -1,5 +1,7 @@
 <div class="center">
-            <section class="portarias w100"></section>
+            <section class="portarias w100">
+                <div id="page"></div>
+            </section>
             <!--ainda vou ver como isso funfa-->
             <section class="agenda">
                 <h3>Agenda do diretor</h3>

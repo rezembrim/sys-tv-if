@@ -9,10 +9,28 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Schedule System</title>
-    <link rel="stylesheet" href="style/style.css">
+    <script src="../frontend/js/conectorWithSuapJson.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="../frontend/js/conectorWithSuapJson.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        #page{
+            display: flex;
+            overflow-x: hidden;
+        }
+
+        .pages{
+            margin: 5px;
+            width: 100%;
+            height: 100vh;
+            border: none;
+            object-fit: cover;
+        }
+
+        .pages:nth-child(n+2):nth-child(-n+6){
+            display: none;  
+        }
+    </style>
 </head>
 
 <body>
@@ -40,8 +58,8 @@
     <footer>
         <p>Página desenvolvida pela CTI/JC</p>
     </footer>
-
-    <script src="../frontend/js/index.js"></script>
+    
+    <script src="../frontend/js/portarias.js"></script>
 </body>
 
 </html>
