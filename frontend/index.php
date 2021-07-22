@@ -14,21 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <style>
-        #page{
+        #pages{
             display: flex;
             overflow-x: hidden;
         }
 
-        .pages{
+        .page{
             margin: 5px;
             width: 100%;
-            height: 100vh;
+            height: 650px;
             border: none;
-            object-fit: cover;
+            display: none;
         }
 
-        .pages:nth-child(n+2):nth-child(-n+6){
-            display: none;  
+        .selected {
+            display: block;
         }
     </style>
 </head>
@@ -58,8 +58,7 @@
     <footer>
         <p>Página desenvolvida pela CTI/JC</p>
     </footer>
-    
-    <script src="../frontend/js/portarias.js"></script>
+
 </body>
 
 </html>

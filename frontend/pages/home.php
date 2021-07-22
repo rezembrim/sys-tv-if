@@ -1,6 +1,6 @@
 <div class="center">
             <section class="portarias w100">
-                <div id="page"></div>
+                <div id="pages"></div>
             </section>
             <!--ainda vou ver como isso funfa-->
             <section class="agenda">

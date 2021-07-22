@@ -6,34 +6,40 @@
 
     // formatar os dados para enviar para o html
     const htmlList = data
-        .map(({ src }) => `<iframe class="pages" src="${src}"></iframe>`)
+        .map(({ src }) => `<iframe class="page" src="${src}"></iframe>`)
         .join('');
 
     //colocar no html
-    document.querySelector('#page').innerHTML = htmlList;
+    document.querySelector('#pages').innerHTML = htmlList;
 
     /**
      * Aqui é gambiarra para
      * manipular o DOM da 
-     * class pages.
+     * class page.
      */
     const delay = 10;
     var time = delay * 1000,
         currentBodySuapIndex = 0,
-        bodyContent = document.querySelectorAll('.pages'),
+        bodyContent = document.querySelectorAll('.page'),
         max = bodyContent.length;
 
 
+    function removeAllContent() {
+        bodyContent.forEach(content => content
+            .className = content
+            .className
+            .replace(" selected", ""));
+    }
+
     function nextBodyContent() {
-        bodyContent[currentBodySuapIndex]
-            .style.display = 'none';
+        removeAllContent();
         currentBodySuapIndex++;
 
         if (currentBodySuapIndex >= max)
             currentBodySuapIndex = 0;
 
         bodyContent[currentBodySuapIndex]
-            .style.display = 'block';
+            .className += " selected";
     }
 
     function start() {
@@ -42,13 +48,7 @@
         }, time);
     }
 
-    function initDisplayNoneInBodyContents() {
-        const n = [...bodyContent]
-        for (let index = 1; index < max; index++) {
-            n[index].style.display = 'none'
-        }
-    }
-
-    initDisplayNoneInBodyContents();
+    removeAllContent();
+    bodyContent[0].className += " selected";
     window.addEventListener('load', start);
 })();

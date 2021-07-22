@@ -34,7 +34,7 @@ header {
 
 .logo>img {
     width: 12%;
-    margin: 2px 15px;
+    margin: 3px 15px;
 }
 
 
@@ -105,13 +105,19 @@ section.noticias {
     border-radius: 5px;
 }
 
-.noticias>article:nth-child(3) {
-    animation-delay: 2s;
-    animation-name: child;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-    animation-direction: alternate;
-    animation-timing-function: steps(0.99, step-start);
+.noticias>article:nth-child(2) {
+    -webkit-animation: 2s;
+    -webkit-animation-name: child;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: steps(0.99, step-start);
+    -moz-animation: 2s;
+    -moz-animation-name: child;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 3s;
+    -moz-animation-direction: alternate;
+    -moz-animation-timing-function: steps(0.99, step-start);
 }
 
 @keyframes child {
