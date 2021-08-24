@@ -14,7 +14,7 @@
 
 <script>
     initSuapJson();
-    window.location.replace("../ws-projeto-ti/frontend");
+    window.location.replace("/frontend");
 
     async function initSuapJson () {
         await fetch('http://localhost:3122/');
