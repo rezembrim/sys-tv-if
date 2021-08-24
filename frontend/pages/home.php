@@ -28,12 +28,5 @@
                         <a href="<?php echo $link[2][3];?>" class="titulo"><?php echo $matches[2][3]; ?></a>
                     </article>
                 </section>
-                <div class="data-e-hora w50">
-                    <div class="data-e-hora-internos">
-                        <img src="images/Campus Joao Camara-Vertical.png" alt="logo vertical do ifrn-jc">
-                        <h2 id="date"></h2>
-                        <h3 id="clock"></h3>
-                    </div>
-                </div><!--data-e-hora-->
             </div><!--noticias-dataHora-->
         </div><!--center-->

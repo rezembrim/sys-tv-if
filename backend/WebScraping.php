@@ -14,7 +14,7 @@
     preg_match_all('/<div class="each_news">(.*?)<a href="(.*?)">(.*?)<\/a>(.*?)<\/div>/s', $content, $link);
 
     function formatTitle($title) {
-        $maxChar = 100;
+        $maxChar = 200;
         return strlen($title) > $maxChar?$title = substr($title, 0, $maxChar).'...':$title;
     }
 

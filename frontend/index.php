@@ -22,7 +22,7 @@
         .page{
             margin: 5px;
             width: 100%;
-            height: 650px;
+            height: 900px;
             border: none;
             display: none;
         }
