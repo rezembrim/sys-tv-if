@@ -69,7 +69,7 @@ server.get('/', async(request, response) => {
             });
 
             fs.writeFile(
-                '../ws-projeto-TI/frontend/pages/downloads/file' + index + '.html',
+                './frontend/pages/downloads/file' + index + '.html',
                 '<html>' + htmlContent + '</html>',
                 err => {
                     if (err) throw new Error('something ment wrong');
