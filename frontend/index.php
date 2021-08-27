@@ -16,14 +16,15 @@
     <link rel="stylesheet" href="style/style.css">
     <style>
         #pages{
+            height: 100%;
             display: flex;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         .page{
-            margin: 5px;
+            margin: 1%;
             width: 100%;
-            height: 900px;
+            height: 100%;
             border: none;
             display: none;
         }
@@ -59,7 +60,6 @@
     <footer>
         <p>Página desenvolvida pela CTI/JC</p>
     </footer>
-
 </body>
 
 </html>
