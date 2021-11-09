@@ -8,7 +8,6 @@ const cors = require('cors');
 const express = require('express');
 const playwright = require('playwright');
 const fs = require('fs');
-const { env } = require('process');
 
 const browserPlaywrite = playwright.chromium;
 const server = express();
@@ -21,9 +20,9 @@ server.get('/bot', async(request, response) => {
 
     // login
     await page.goto('https://suap.ifrn.edu.br/');
-    await page.type('#id_username', env.USER);
+    await page.type('#id_username', process.env.USER);
     await page.waitForTimeout(2000);
-    await page.type('#id_password', env.PASSWORD);
+    await page.type('#id_password', process.env.PASSWORD);
     await page.waitForTimeout(3542);
     await page.click('[class="btn success"]');
 
